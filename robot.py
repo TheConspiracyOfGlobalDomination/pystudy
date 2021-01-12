@@ -1,3 +1,5 @@
 import urllib.request
-contents = urllib.request.urlopen("http://www.okex.com/api/system/v3/status").read()
-print(contents)
+
+req = urllib.request.Request("http://www.okex.com/api/system/v3/status", headers={"User-Agent":"Magic Browser"})
+con = urllib.request.urlopen(req)
+print(con.read())
